@@ -33,6 +33,7 @@ public class GameManager : IGameManager
         {
             throw new InvalidOperationException("a game with this title already exists");
         }
+        await _repo.AddAsync(game);
     }
     public async Task UpdateGameAsync(Game game)
     {
