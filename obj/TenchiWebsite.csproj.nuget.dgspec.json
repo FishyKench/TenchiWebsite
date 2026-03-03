@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\m7mda\\Desktop\\TenchiWebsite\\TenchiWebsite.csproj": {}
+    "C:\\Users\\m7mda\\Documents\\GitHub\\TenchiWebsite\\TenchiWebsite\\TenchiWebsite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\m7mda\\Desktop\\TenchiWebsite\\TenchiWebsite.csproj": {
+    "C:\\Users\\m7mda\\Documents\\GitHub\\TenchiWebsite\\TenchiWebsite\\TenchiWebsite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\m7mda\\Desktop\\TenchiWebsite\\TenchiWebsite.csproj",
+        "projectUniqueName": "C:\\Users\\m7mda\\Documents\\GitHub\\TenchiWebsite\\TenchiWebsite\\TenchiWebsite.csproj",
         "projectName": "TenchiWebsite",
-        "projectPath": "C:\\Users\\m7mda\\Desktop\\TenchiWebsite\\TenchiWebsite.csproj",
+        "projectPath": "C:\\Users\\m7mda\\Documents\\GitHub\\TenchiWebsite\\TenchiWebsite\\TenchiWebsite.csproj",
         "packagesPath": "C:\\Users\\m7mda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\m7mda\\Desktop\\TenchiWebsite\\obj\\",
+        "outputPath": "C:\\Users\\m7mda\\Documents\\GitHub\\TenchiWebsite\\TenchiWebsite\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\m7mda\\AppData\\Roaming\\NuGet\\NuGet.Config"

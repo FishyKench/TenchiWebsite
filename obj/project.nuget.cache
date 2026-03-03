@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DVrtLFggcWY=",
+  "dgSpecHash": "VqeTCYgj2lA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\m7mda\\Desktop\\TenchiWebsite\\TenchiWebsite.csproj",
+  "projectFilePath": "C:\\Users\\m7mda\\Documents\\GitHub\\TenchiWebsite\\TenchiWebsite\\TenchiWebsite.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\m7mda\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\m7mda\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
