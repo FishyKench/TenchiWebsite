@@ -1,0 +1,6 @@
+@TenchiWebsite_HostAddress = http://localhost:5270
+
+GET {{TenchiWebsite_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
