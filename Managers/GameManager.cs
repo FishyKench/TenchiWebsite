@@ -12,7 +12,7 @@ public class GameManager : IGameManager
         return await _repo.GetAllAsync();
     }
 
-    public async Task<Game> GetGameByIdAsync(int id)
+    public async Task<Game?> GetGameByIdAsync(int id)
     {
         return await _repo.GetByIdAsync(id);
     }

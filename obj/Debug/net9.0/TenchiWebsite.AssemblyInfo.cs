@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TenchiWebsite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f01db37fffbbac01b2a694963709f37dda07fa90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1124c6c84b180afed71d1304638f50f6c31b29c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TenchiWebsite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TenchiWebsite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
