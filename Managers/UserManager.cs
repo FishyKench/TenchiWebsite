@@ -1,6 +1,7 @@
 
 
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 
 public class UserManager : IUserManager
 {
@@ -35,6 +36,8 @@ public class UserManager : IUserManager
         {
             throw new InvalidOperationException("a user with this email already exists");
         }
+        var hasher = new PasswordHasher<User>();
+        user.userHashPassword = hasher.HashPassword(user, user.userHashPassword);
         await _repo.AddAsync(user);
     }
 
