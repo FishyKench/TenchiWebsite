@@ -51,11 +51,18 @@ public class UserManager : IUserManager
 
         await _repo.DeleteAsync(id);
     }
-    public Task UpdateUserAsync(User user)
+    public async Task UpdateUserAsync(User user)
     {
-        throw new NotImplementedException();
+        var existing = await _repo.GetByIdAsync(user.Id);
+        if(existing == null)
+        {
+            throw new KeyNotFoundException($"User with ID  {user.Id} not found");
+        }
+        await _repo.UpdateAsync(user);
     }
 
-
-
+    public async Task<User> GetUserByEmail(string email)
+    {
+        return await _repo.GetByEmailAsync(email);
+    }
 }
