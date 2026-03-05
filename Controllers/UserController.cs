@@ -25,13 +25,6 @@ public class UserController : ControllerBase
         return Ok(users);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Create([FromBody] User user)
-    {
-        await _repo.AddAsync(user);
-        return CreatedAtAction(nameof(GetById), new {id = user.Id}, user);
-    }
-
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] User user)
     {
