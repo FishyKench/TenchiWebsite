@@ -8,7 +8,7 @@ public class Game
 
     public string? Description{get; set;}
 
-    public DateTime ReleaseDate {get; set;}
+    public DateTime? ReleaseDate {get; set;}
 
     public Status Status {get; set;}
 

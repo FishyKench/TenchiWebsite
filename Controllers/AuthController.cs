@@ -15,10 +15,16 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
-    public async Task<IActionResult> Register ([FromBody] User user)
+    public async Task<IActionResult> Register ([FromBody] RegisterRequestDTO request)
     {
-            await _manager.CreateUserAsync(user);
-            return Ok("User registred successfully");
+        var user = new User
+        {
+            userName = request.userName,
+            userEmail = request.userEmail,
+            userHashPassword = request.password
+        };
+        await _manager.CreateUserAsync(user);
+        return Ok("User registred successfully");
     }
     [HttpPost("login")]
     public async Task<IActionResult> Login (string email, string password)
@@ -37,7 +43,13 @@ public class AuthController : ControllerBase
         }
 
         var token = _tokenService.GenerateToken(user);
-        return Ok(token);
+        return Ok(new LoginResponseDTO
+        {
+            Id = user.Id,
+            UserName = user.userName,
+            UserEmail = user.userEmail,
+            Token = token
+        });
 
     }
 }
