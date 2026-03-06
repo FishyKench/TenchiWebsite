@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 [ApiController]
@@ -38,25 +39,14 @@ public class GameController : ControllerBase
         var games = await _manager.GetGamesByStatusAsync(status);
         return Ok(games);
     }
-
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] Game game)
     {
-        try
-        {
-            await _manager.CreateGameAsync(game);
-            return CreatedAtAction(nameof(GetById), new {id = game.Id}, game);
-        }
-        catch (ArgumentException ex)
-        {
-            return BadRequest(ex.Message);
-        }
-        catch (InvalidOperationException ex)
-        {
-            return Conflict(ex.Message);
-        }
+        await _manager.CreateGameAsync(game);
+        return CreatedAtAction(nameof(GetById), new {id = game.Id}, game);
     }
-
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<IActionResult> Update (int id, [FromBody] Game game)
     {
@@ -64,49 +54,23 @@ public class GameController : ControllerBase
         {
             return BadRequest("ID mismatch");
         }
-
-        try
-        {
-            await _manager.UpdateGameAsync(game);
-            return NoContent();
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(ex.Message);
-        }
-        
+        await _manager.UpdateGameAsync(game);
+        return NoContent();
     }
-
+    [Authorize]
     [HttpDelete("{id}")]
 
     public async Task<IActionResult> Delete(int id)
     {
-        try
-        {
-            await _manager.DeleteGameAsync(id);
-            return NoContent();
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(ex.Message);
-        }
+        await _manager.DeleteGameAsync(id);
+        return NoContent();
     }
+    [Authorize]
     [HttpPatch("{id}/publish")]
 
     public async Task<IActionResult> Publish (int id)
     {
-        try
-        {
-            await _manager.PublishGameAsync(id);
-            return NoContent();
-        }
-        catch (KeyNotFoundException ex )
-        {
-            return NotFound(ex.Message);
-        }
-        catch(InvalidOperationException ex)
-        {
-            return Conflict(ex.Message);
-        }
+        await _manager.PublishGameAsync(id);
+        return NoContent();
     }
 }

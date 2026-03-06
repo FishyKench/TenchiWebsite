@@ -17,19 +17,8 @@ public class AuthController : ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register ([FromBody] User user)
     {
-        try
-        {
             await _manager.CreateUserAsync(user);
             return Ok("User registred successfully");
-        }
-        catch (ArgumentException ex)
-        {
-            return BadRequest(ex.Message);
-        }
-        catch (InvalidOperationException ex)
-        {
-            return Conflict(ex.Message);
-        }
     }
     [HttpPost("login")]
     public async Task<IActionResult> Login (string email, string password)
