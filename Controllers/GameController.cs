@@ -91,6 +91,7 @@ public class GameController : ControllerBase
     {
         var game = new Game
         {
+            Id = id,
             GameTitle = request.GameTitle,
             Description = request.Description,
             ReleaseDate = request.ReleaseDate,
