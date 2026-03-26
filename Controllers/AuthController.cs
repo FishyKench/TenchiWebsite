@@ -46,6 +46,7 @@ public class AuthController : ControllerBase
         return Ok(new LoginResponseDTO
         {
             Id = user.Id,
+            Role = user.userRoles.ToString(),
             UserName = user.userName,
             UserEmail = user.userEmail,
             Token = token
