@@ -9,4 +9,5 @@ public class AppDbContext : DbContext
 
     public DbSet<User> Users {get; set;}
     public DbSet<Game> games {get; set;}
+    public DbSet<Comment> Comments { get; set; }
 }
