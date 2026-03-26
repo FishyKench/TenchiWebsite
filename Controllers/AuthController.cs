@@ -24,7 +24,7 @@ public class AuthController : ControllerBase
             userHashPassword = request.password
         };
         await _manager.CreateUserAsync(user);
-        return Ok("User registred successfully");
+        return Ok(new { message = "User registered successfully" });
     }
     [HttpPost("login")]
     public async Task<IActionResult> Login (string email, string password)
