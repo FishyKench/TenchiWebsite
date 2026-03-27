@@ -22,6 +22,7 @@ public class CommentController : ControllerBase
         return Ok(comments.Select(c => new CommentResponseDTO
         {
             Id = c.Id,
+            UserId = c.UserId,
             Content = c.Content,
             UserName = c.User.userName,
             CreatedAt = c.CreatedAt,
@@ -53,6 +54,13 @@ public class CommentController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
+        var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var role = User.FindFirstValue(ClaimTypes.Role);
+        var comment = await _manager.GetCommentByIdAsync(id);
+
+        if (comment == null) return NotFound();
+        if (comment.UserId != userId && role != "Admin") return Forbid();
+
         await _manager.DeleteCommentAsync(id);
         return NoContent();
     }

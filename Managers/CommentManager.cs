@@ -7,6 +7,10 @@ public class CommentManager : ICommentManager
     {
         _repo = repo;
     }
+    public async Task<Comment> GetCommentByIdAsync(int id)
+    {
+        return await _repo.GetByIdAsync(id);
+    }
     public async Task<IEnumerable<Comment>> GetCommentByGameId(int gameId)
     {
         return await _repo.GetByGameIdAsync(gameId);
